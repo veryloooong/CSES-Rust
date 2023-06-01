@@ -8,7 +8,7 @@ Huge thanks to [EbTech](https://github.com/EbTech/rust-algorithms) for providing
 | --------------------- |:---------------:|
 | Introductory Problems | 9 / 19          |
 | Sorting and Searching | 4 / 35          |
-| Dynamic Programming   | 0 / 19          |
+| Dynamic Programming   | 1 / 19          |
 | Graph Algorithms      | 0 / 36          |
 | Range Queries         | 0 / 19          |
 | Tree Algorithms       | 0 / 16          |
@@ -17,4 +17,4 @@ Huge thanks to [EbTech](https://github.com/EbTech/rust-algorithms) for providing
 | Geometry              | 0 / 7           |
 | Advanced Techniques   | 0 / 24          |
 | Additional Problems   | 0 / 77          |
-| **Total**             | **13 / 300**    |
+| **Total**             | **14 / 300**    |
