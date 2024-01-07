@@ -1,5 +1,3 @@
-// Write solving code first, migrate to structure later.
-
 #![allow(dead_code)]
 
 use std::fs::File;
@@ -35,7 +33,7 @@ where
   a * b / gcd(a, b)
 }
 
-/// From https://github.com/EbTech/rust-algorithms
+/// https://github.com/EbTech/rust-algorithms
 struct Scanner<R> {
   reader: R,
   buffer: Vec<String>,
@@ -62,7 +60,7 @@ impl<R: std::io::BufRead> Scanner<R> {
 }
 
 /// Quick for initing IO
-pub(crate) fn default_io() -> (Scanner<StdinLock<'static>>, BufWriter<StdoutLock<'static>>) {
+fn default_io() -> (Scanner<StdinLock<'static>>, BufWriter<StdoutLock<'static>>) {
   (
     Scanner::new(stdin().lock()),
     BufWriter::new(stdout().lock()),
@@ -70,7 +68,7 @@ pub(crate) fn default_io() -> (Scanner<StdinLock<'static>>, BufWriter<StdoutLock
 }
 
 /// For local tests
-pub(crate) fn from_file() -> (Scanner<BufReader<File>>, BufWriter<File>) {
+fn from_file() -> (Scanner<BufReader<File>>, BufWriter<File>) {
   let input = File::open("./src/input.txt").expect("Not found");
   let output = File::create("./src/output.txt").expect("Not found");
 
@@ -80,27 +78,8 @@ pub(crate) fn from_file() -> (Scanner<BufReader<File>>, BufWriter<File>) {
   )
 }
 
-fn solve() {}
-
 fn main() -> std::io::Result<()> {
   let (mut input, mut output) = default_io();
-
-  let n: usize = input.token();
-  let mut arr: Vec<usize> = vec![0; n];
-  let mut ans = 1;
-
-  let _ = (0..n).map(|i| {
-    let elem: usize = input.token();
-    arr[elem - 1] = i;
-  });
-
-  let _ = (1..n).map(|i| {
-    if arr[i] < arr[i - 1] {
-      ans += 1;
-    }
-  });
-
-  writeln!(output, "{ans}")?;
 
   Ok(())
 }

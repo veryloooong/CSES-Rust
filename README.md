@@ -12,13 +12,13 @@ I won't do problems originally using `std::multiset` or `std::multimap` (such as
 
 | Section               | Problems solved |
 | --------------------- | :-------------: |
-| Introductory Problems |     10 / 19     |
-| Sorting and Searching |     4 / 35      |
+| Introductory Problems |     13 / 20     |
+| Sorting and Searching |     8 / 35      |
 | Dynamic Programming   |     1 / 19      |
 | Graph Algorithms      |     0 / 36      |
 | Range Queries         |     0 / 19      |
 | Tree Algorithms       |     0 / 16      |
-| Mathematics           |     1 / 31      |
+| Mathematics           |     2 / 31      |
 | String Algorithms     |     0 / 17      |
 | Geometry              |      0 / 7      |
 | Advanced Techniques   |     0 / 24      |
