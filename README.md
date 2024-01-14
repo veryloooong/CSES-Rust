@@ -15,7 +15,7 @@ I won't do problems originally using `std::multiset` or `std::multimap` (such as
 | Introductory Problems |     13 / 20     |
 | Sorting and Searching |     8 / 35      |
 | Dynamic Programming   |     1 / 19      |
-| Graph Algorithms      |     0 / 36      |
+| Graph Algorithms      |     2 / 36      |
 | Range Queries         |     0 / 19      |
 | Tree Algorithms       |     0 / 16      |
 | Mathematics           |     2 / 31      |

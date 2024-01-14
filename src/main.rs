@@ -1,34 +1,37 @@
 #![allow(dead_code)]
 
+use std::collections::HashSet;
 use std::fs::File;
 use std::io::{stdin, stdout, BufReader, BufWriter, StdinLock, StdoutLock, Write};
+use std::ops::{Div, Mul, RemAssign};
 
-mod dynamic_programming;
-mod introductory;
-mod mathematics;
-mod sorting_searching;
+// mod dynamic_programming;
+mod graph_algorithms;
+// mod introductory;
+// mod mathematics;
+// mod sorting_searching;
+// mod tests;
 
 #[inline]
 fn gcd<T>(a: T, b: T) -> T
 where
-  T: PartialEq + std::ops::Rem<Output = T> + Default + Copy,
+  T: PartialEq + RemAssign + Default + Copy,
 {
-  if b == T::default() {
-    a
-  } else {
-    gcd(b, a % b)
+  let mut a = a;
+  let mut b = b;
+
+  while b != T::default() {
+    a %= b;
+    std::mem::swap(&mut a, &mut b);
   }
+
+  a
 }
 
 #[inline]
 fn lcm<T>(a: T, b: T) -> T
 where
-  T: PartialEq
-    + std::ops::Rem<Output = T>
-    + std::ops::Mul<Output = T>
-    + std::ops::Div<Output = T>
-    + Default
-    + Copy,
+  T: PartialEq + RemAssign + Mul<Output = T> + Div<Output = T> + Default + Copy,
 {
   a * b / gcd(a, b)
 }
@@ -72,10 +75,7 @@ fn from_file() -> (Scanner<BufReader<File>>, BufWriter<File>) {
   let input = File::open("./src/input.txt").expect("Not found");
   let output = File::create("./src/output.txt").expect("Not found");
 
-  (
-    Scanner::new(std::io::BufReader::new(input)),
-    std::io::BufWriter::new(output),
-  )
+  (Scanner::new(BufReader::new(input)), BufWriter::new(output))
 }
 
 fn main() -> std::io::Result<()> {
